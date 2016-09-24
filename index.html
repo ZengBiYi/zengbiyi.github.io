@@ -104,11 +104,12 @@
 <p>Now the question is, can we find those two m and n exist?</p>
 <p>The answer is YES. Here we need a little math – Bezout’s identity, which is:<br>We can always find a and b to satisfy ax + bx = d where d = gcd(x, y)</p>
 <p>So, everything is clear, if z % d == 0, then we have (a<em>z/d)</em>x + (b<em>z/d)</em>y = z, which means m and n exist.<br>Below is the code:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">bool canMeasureWater(int x, int y, int z) &#123;</div><div class="line">    <span class="built_in">return</span> z == 0 || (z - x &lt;= y &amp;&amp; z % gcd(x, y) == 0);</div><div class="line">&#125;</div><div class="line">private:</div><div class="line">int gcd(int x, int y)</div><div class="line">&#123;</div><div class="line">    <span class="built_in">return</span> y == 0 ? x : gcd(y, x % y);</div><div class="line">&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>一句话概括上面的思路就是：如果 z 是 x 和 y 的最大公约数的倍数，那么返回 true，否则返回 false.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/15/new-article/" data-id="cithe7mqa0001ykhrcm1cjqfr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/15/new-article/" data-id="cithecx8g00011khrldmc60if" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/15/hello-world/" data-id="cithe7mq50000ykhrodc4l0zd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/15/hello-world/" data-id="cithecx8c00001khrhy3uqod0" class="article-share-link">Share</a>
       
       
     </footer>

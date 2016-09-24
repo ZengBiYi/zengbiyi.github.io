@@ -6,24 +6,18 @@
   <title>LeetCode -- 365.Water and Jug Problem | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="欢迎来到我的Github，这是我的第一篇文章，用来记录下刷LeetCode时遇到不错的题目。
-题目要求给定两个体积分别为 x 和 y 的桶，判断是否能用这两个桶得到体积为 z 的水，能的话返回 true，不能的话返回 false.
-Example 1:12Input: x = 3, y = 5, z = 4Output: True
-Example 2:12Input: x = 2, y = 6,">
+ProblemYou are given two jugs with capacities x and y litres. There is an infinite amount of water supply available. You need to determine whether it is">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode -- 365.Water and Jug Problem">
 <meta property="og:url" content="http://yoursite.com/2016/08/15/new-article/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="欢迎来到我的Github，这是我的第一篇文章，用来记录下刷LeetCode时遇到不错的题目。
-题目要求给定两个体积分别为 x 和 y 的桶，判断是否能用这两个桶得到体积为 z 的水，能的话返回 true，不能的话返回 false.
-Example 1:12Input: x = 3, y = 5, z = 4Output: True
-Example 2:12Input: x = 2, y = 6,">
-<meta property="og:updated_time" content="2016-09-24T16:03:56.800Z">
+ProblemYou are given two jugs with capacities x and y litres. There is an infinite amount of water supply available. You need to determine whether it is">
+<meta property="og:updated_time" content="2016-09-24T16:10:32.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode -- 365.Water and Jug Problem">
 <meta name="twitter:description" content="欢迎来到我的Github，这是我的第一篇文章，用来记录下刷LeetCode时遇到不错的题目。
-题目要求给定两个体积分别为 x 和 y 的桶，判断是否能用这两个桶得到体积为 z 的水，能的话返回 true，不能的话返回 false.
-Example 1:12Input: x = 3, y = 5, z = 4Output: True
-Example 2:12Input: x = 2, y = 6,">
+ProblemYou are given two jugs with capacities x and y litres. There is an infinite amount of water supply available. You need to determine whether it is">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -99,18 +93,27 @@ Example 2:12Input: x = 2, y = 6,">
     <div class="article-entry" itemprop="articleBody">
       
         <p>欢迎来到我的Github，这是我的第一篇文章，用来记录下刷LeetCode时遇到不错的题目。</p>
-<h2 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h2><p>给定两个体积分别为 x 和 y 的桶，判断是否能用这两个桶得到体积为 z 的水，能的话返回 true，不能的话返回 false.</p>
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given two jugs with capacities x and y litres. There is an infinite amount of water supply available. You need to determine whether it is possible to measure exactly z litres using these two jugs.</p>
+<p>If z liters of water is measurable, you must have z liters of water contained within one or both buckets by the end.</p>
+<p>Operations allowed:</p>
+<p>Fill any of the jugs completely with water.<br>Empty any of the jugs.<br>Pour water from one jug into another till the other jug is completely full or the first jug itself is empty.</p>
+<p>也就是说，给定两个体积分别为 x 和 y 的桶，判断是否能用这两个桶得到体积为 z 的水，能的话返回 true，不能的话返回 false.</p>
 <h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example 1:"></a>Example 1:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: x = 3, y = 5, z = 4</div><div class="line">Output: True</div></pre></td></tr></table></figure>
 <h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2:"></a>Example 2:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: x = 2, y = 6, z = 5</div><div class="line">Output: False</div></pre></td></tr></table></figure>
 <h3 id="我的解题思路"><a href="#我的解题思路" class="headerlink" title="我的解题思路"></a>我的解题思路</h3><p>通过几个例子，可以找到一个规律，凡是通过桶 x 和 y 可以得到 z 的必定存在 a 和 b 满足式子 ：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ax + by = z.</div></pre></td></tr></table></figure></p>
-<p>因此，我就推断只要找得到满足条件的 a 和 b，就返回 true，否则返回 false.<br>在实际编程时，由于无法确定 a 和 b 的范围，我的代码不能通过所有的测试用例。Failed。</p>
-<h3 id="别人的解题思路"><a href="#别人的解题思路" class="headerlink" title="别人的解题思路"></a>别人的解题思路</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>因此，我就推断只要找得到满足条件的 a 和 b，就返回 true，否则返回 false.<br>在实际编程时，由于无法确定 a 和 b 的范围，我的代码不能通过所有的测试用例。<br>Failed。</p>
+<h3 id="别人的解题思路–最大公约数gcd"><a href="#别人的解题思路–最大公约数gcd" class="headerlink" title="别人的解题思路–最大公约数gcd"></a>别人的解题思路–最大公约数gcd</h3><p>Forget about two jugs pouring between each other, which may make you confused.</p>
+<p>Let’s make it simple: assuming we have one big enough bucket and two cups with volume x and y, respectively. Now we want to perform a series of operation – pouring water in and out only by those two cups with exactly amount x or y. Somehow, there will be only z water left in this big bucket eventually. Then the equation will be:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">z = m * x + n * y</div></pre></td></tr></table></figure></p>
+<p>m means using cup-x m times. If m is positive, it means pouring in. Otherwise, it’s pouring out.<br>n is similar.</p>
+<p>For example, 4 = (-2) <em> 3 + 2 </em> 5, which means you pour in water twice with cup-5 and pour out water twice with cup-3. Talk back to the question, it’s like we first fill jug-5, pour water to jug-3 from jug-5, empty jug-3, pour the remaining 2 water into jug-3 from jug-5, fill jug-5 again, pour water into jug-3 from jug-5, empty jug-3, then we have only 4 water left in jug-5. It’s exactly fill jug-5 twice and empty jug-3 twice.</p>
+<p>Now the question is, can we find those two m and n exist?</p>
+<p>The answer is YES. Here we need a little math – Bezout’s identity, which is:<br>We can always find a and b to satisfy ax + bx = d where d = gcd(x, y)</p>
+<p>So, everything is clear, if z % d == 0, then we have (a<em>z/d)</em>x + (b<em>z/d)</em>y = z, which means m and n exist.<br>Below is the code:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Solution &#123;</div><div class="line">public:</div><div class="line">bool canMeasureWater(int x, int y, int z) &#123;</div><div class="line">    <span class="built_in">return</span> z == 0 || (z - x &lt;= y &amp;&amp; z % gcd(x, y) == 0);</div><div class="line">&#125;</div><div class="line">private:</div><div class="line">int gcd(int x, int y)</div><div class="line">&#123;</div><div class="line">    <span class="built_in">return</span> y == 0 ? x : gcd(y, x % y);</div><div class="line">&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/15/new-article/" data-id="cithdz63h0001cohr5mxvghfz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/15/new-article/" data-id="cithe7mqa0001ykhrcm1cjqfr" class="article-share-link">Share</a>
       
       
     </footer>
